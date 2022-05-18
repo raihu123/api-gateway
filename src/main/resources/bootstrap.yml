@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      url: http://localhost:8888
+
+      //TODO: provide cloud config server url
