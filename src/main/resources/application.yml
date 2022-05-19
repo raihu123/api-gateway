@@ -6,24 +6,24 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: customer-service
-          uri: lb://customers
+        - id: CustomerService
+          uri: lb://CustomerService
           predicates:
             - Path=/customers/**
-        - id: product-service
-          uri: lb://products
+        - id: ProductService
+          uri: lb://ProductService
           predicates:
             - Path=/products/**
-        - id: order-service
-          uri: lb://orders
+        - id: OrderService
+          uri: lb://OrderService
           predicates:
             - Path=/orders/**
-        - id: shopping-cart-command-service
-          uri: lb://shopping-cart-command
+        - id: ShoppingCartService
+          uri: lb://ShoppingCartService
           predicates:
             - Path=/shopping-cart-command/**
-        - id: shopping-cart-query-service
-          uri: lb://shopping-cart-query
+        - id: ShoppingCartViewService
+          uri: lb://ShoppingCartViewService
           predicates:
             - Path=/shopping-cart-query/**
 message: Hello from API Gateway
@@ -33,5 +33,3 @@ eureka:
       default-zone: http://localhost:8761/eureka
     register-with-eureka: true
     fetch-registry: true
-
-    //TODO: provide eureka server url
